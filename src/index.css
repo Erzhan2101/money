@@ -60,4 +60,12 @@ label {
     font-size: 14px;
 }
 
+.bx{
+    transition: .3s;
+}
+
+.bx:hover{
+    color:#0b5ed7 ;
+}
+
 

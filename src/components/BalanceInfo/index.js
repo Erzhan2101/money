@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 
 const BalanceInfo = () => {
 
-    const {costs, currentBalance} = useSelector(s => s.tasks)
+    const {costs, currentBalance ,  initialAmount} = useSelector(s => s.tasks)
 
     return (
         <>
@@ -16,7 +16,7 @@ const BalanceInfo = () => {
                     </div>
                 </div>
                 <div className='cart'>
-                    <h2 className='m-4'>{costs}$</h2>
+                    <h2 className='m-4'>{costs},00 $</h2>
                     <div className="cart-r">
                         <p className='m-4'>потратил</p>
                     </div>

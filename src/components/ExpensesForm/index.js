@@ -2,6 +2,7 @@ import React from 'react';
 import {useFormik} from "formik";
 import * as yup from 'yup'
 import {useDispatch} from "react-redux";
+import {addTasks} from "../../redux/actions/tasksActions";
 
 const ExpensesForm = () => {
     const dispatch = useDispatch()
@@ -18,9 +19,9 @@ const ExpensesForm = () => {
                 .required('Заполните поле!'),
             price: yup.string().required("Выбирите сумму!")
         }),
-        onSubmit: (values) => {
-            dispatch({type: 'ADD_COST', payload:values})
-
+        onSubmit: (values, {resetForm}) => {
+            dispatch(addTasks(values))
+            resetForm()
         },
     })
 
@@ -61,6 +62,7 @@ const ExpensesForm = () => {
                         id='price'
                         type='number'
                         name='price'
+                        max={400}
                         onChange={formik.handleChange}
                         value={formik.values.price}
                         placeholder="0"/>
@@ -69,7 +71,7 @@ const ExpensesForm = () => {
                         <div className='text-danger'>{formik.errors.price}</div>) : null}
                 </div>
             </div>
-            <button type="submit" className="btn btn-primary d-flex ms-auto mt-4 font">Добавить</button>
+            <button  type="submit" className="btn btn-primary d-flex ms-auto mt-4 font">Добавить</button>
         </form>
     );
 };
