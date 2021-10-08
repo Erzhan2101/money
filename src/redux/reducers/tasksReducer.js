@@ -27,7 +27,6 @@ export const tasksReducer = (state = initialState, action) => {
                 ...state,
                 tasks: state.tasks.filter((el, idx) => idx !== action.payload),
                 currentBalance: state.currentBalance + +deleteItem.price,
-                // initialAmount: state.initialAmount + +deleteItem.price,
                 costs: state.costs - +deleteItem.price
             }
         case "RESET_ALL":

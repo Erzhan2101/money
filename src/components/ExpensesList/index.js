@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {removeFromCart, sortTasks} from "../../redux/actions/tasksActions";
+import {removeFromCart} from "../../redux/actions/tasksActions";
 
 const ExpensesList = () => {
 
