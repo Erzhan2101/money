@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 
 const BalanceInfo = () => {
 
-    const {costs, currentBalance ,  initialAmount} = useSelector(s => s.tasks)
+    const {costs, currentBalance } = useSelector(s => s.tasks)
 
     return (
         <>
