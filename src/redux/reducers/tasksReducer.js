@@ -1,5 +1,5 @@
 const initialState = {
-    task: [],
+    tasks: [],
     initialAmount: 400,
     costs: 0,
     currentBalance: 400,
@@ -7,8 +7,14 @@ const initialState = {
 }
 
 export const tasksReducer = (state = initialState, action) => {
-    switch (action.type){
+    switch (action.type) {
         case 'ADD_COST':
+            return {...state,
+                tasks: [...state.tasks, action.payload],
+                initialAmount: state.currentBalance - action.payload.price,
+                currentBalance: state.currentBalance - action.payload.price,
+                costs: state.costs + action.payload.price
+            }
         default:
             return state
     }

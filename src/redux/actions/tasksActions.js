@@ -1,3 +1,3 @@
-export const addCost = (data) => {
-    return {type: 'ADD_COST', payload: data}
+export const addTasks = (data) => {
+    return {type: 'ADD_COST', payload:data}
 }

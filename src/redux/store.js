@@ -6,4 +6,4 @@ import {userReducer} from "./reducers/userReducer";
 export const store = createStore(combineReducers({
     tasks: tasksReducer,
     user: userReducer
-}))
+}),composeWithDevTools())
